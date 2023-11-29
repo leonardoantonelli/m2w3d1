@@ -23,3 +23,27 @@ button.onclick= function (){
  </table>`
 }
 
+//rifatto
+const Person = function (nome, cognome, eta) {
+  this.nome = nome;
+  this.cognome = cognome;
+  this.eta = eta;
+};
+
+const saveDatii = () => {
+  let testodainserire = document.getElementById("testodainserire");
+  let testo = document.createElement("div");
+  let nome = document.getElementById("nome");
+  let cognome = document.getElementById("cognome");
+  let eta = document.getElementById("eta");
+  const actual = new Person(nome.value, cognome.value, eta.value);
+  actual.innerHTML = testo.innerHTML = `<table>
+      <tr>
+        <th> ${actual.nome}</th>
+        <th>${actual.cognome}</th>
+        <th>${actual.eta}</th>
+      </tr>
+    </table>`;
+  testodainserire.appendChild(testo);
+};
+
